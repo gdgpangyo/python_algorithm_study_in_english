@@ -5,7 +5,6 @@ class Solution:
     def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
         words = re.sub(r'([^\s\w]|_)+', ' ', paragraph).lower().split()
         counts = collections.Counter(words)
-        print(counts)
         for b in banned:
             if b in counts:
                 counts.pop(b)
